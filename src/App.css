@@ -1,0 +1,180 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  /* padding: 73px 57px 57px 73px; */
+}
+
+header > h3 {
+  color: #f9f4da;
+}
+
+header > p {
+  color: #8e8e8e;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  margin: 50px 0 0;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  gap: 24px;
+}
+
+.language-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+}
+
+.language-section > span {
+  padding: 4.5px;
+  border-radius: 5px;
+}
+
+.blanks-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.blanks-section > span {
+  width: clamp(36px, 8vw, 60px);
+  aspect-ratio: 1;
+  display: flex;
+  flex-shrink: 0;
+  background-color: #323232;
+  border-bottom: 1px solid #f9f4da;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.blanks-section > span.missed {
+  color: #ec5d49;
+}
+
+.keyboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.keyboard-container > button {
+  flex: 0 0 calc((100% - 8 * 8px) / 9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 42px;
+  padding: 8px 0;
+  border: none;
+  border-radius: 5px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #fcba29;
+  color: #000000;
+}
+
+/* .dead {
+  opacity: 0.5;
+} */
+
+.dead {
+  position: relative;
+  /* Keep your existing chip styles, but remove opacity */
+}
+
+.dead::after {
+  content: "💀";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: inherit;
+  font-size: 0.75rem;
+}
+
+.keyboard-container > button.correct {
+  background-color: #10a95b;
+  opacity: 0.5;
+}
+
+.keyboard-container > button.wrong {
+  background-color: #ec5d49;
+  opacity: 0.5;
+}
+
+.game-status {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: #f9f4da;
+  margin-bottom: 24px;
+  max-width: 520px;
+  min-height: 60px;
+}
+
+.game-status.won {
+  background-color: #10a95b;
+}
+
+.game-status.lost {
+  background-color: #ba2a2a;
+}
+
+.game-status.farewell {
+  background-color: #a92aba;
+  font-style: italic;
+  border-style: dashed;
+}
+
+.game-status h2,
+h3 {
+  display: flex;
+  font-family: "Inter", sans-serif;
+}
+
+.new-game {
+  background-color: #11b5e5;
+  color: #000000;
+  border: 1px solid #d7d7d7;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  width: 225px;
+  max-width: 100%;
+  display: block;
+  padding: 10px 0;
+  border-radius: 5px;
+}
